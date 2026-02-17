@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brady Redfearn, PhD | Product Leadership Portfolio</title>
-    <meta name="description" content="Senior Product Leader specializing in SaaS, AI, and Product-Led Growth. PhD in Systems Engineering. UX Research & Cultural Transformation expertise.">
+    <meta name="description" content="Senior Product Leader specializing in SaaS, AI, and Product-Led Growth. PhD in Systems Engineering.">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -37,108 +32,11 @@
             padding: 6rem 2rem 4rem;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="white" opacity="0.1"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .hero .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            opacity: 0.95;
-        }
-
-        .hero .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .badge {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(0,0,0,0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
+        .hero .tagline { font-size: 1.5rem; font-weight: 600; opacity: 0.95; margin-bottom: 0.5rem; }
+        .hero .subtitle { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
 
         /* Navigation */
         .nav {
@@ -158,635 +56,207 @@
             padding: 1rem 2rem;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; }
 
         /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section { margin-bottom: 4rem; }
 
-        .section {
-            margin-bottom: 4rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Portfolio Grid */
-        .portfolio-grid {
+        /* Core Competencies Grid (From Example) */
+        .skills-grid {
             display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .skill-card:hover { transform: translateY(-4px); }
+        .skill-card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.25rem; }
+        .skill-card ul { list-style: none; color: var(--text-secondary); font-size: 0.95rem; }
+        .skill-card li { padding: 0.25rem 0; padding-left: 1.25rem; position: relative; }
+        .skill-card li:before { content: "→"; position: absolute; left: 0; color: var(--primary); }
+
+        /* Portfolio Cards */
+        .portfolio-grid { display: grid; gap: 2rem; margin-top: 2rem; }
         .portfolio-item {
             background: white;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
             border: 1px solid var(--border);
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-
-        .portfolio-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 2rem;
-            position: relative;
-        }
-
-        .portfolio-header.leadership {
-            background: linear-gradient(135deg, #0f172a, #1e3a8a);
-        }
-
-        .portfolio-header.product {
-            background: linear-gradient(135deg, #059669, #10b981);
-        }
-
-        .portfolio-type {
-            display: inline-block;
-            background: rgba(255,255,255,0.3);
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-header h3 {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-content {
-            padding: 2rem;
-        }
-
-        .portfolio-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background: var(--bg-light);
-            color: var(--text-secondary);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
+        .portfolio-header { background: #0f172a; color: white; padding: 2rem; }
+        .portfolio-content { padding: 2rem; }
         .portfolio-meta {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 1rem;
-            padding-top: 1.5rem;
+            margin: 1.5rem 0;
+            padding: 1rem 0;
             border-top: 1px solid var(--border);
-            margin-bottom: 1.5rem;
         }
 
-        .meta-item {
-            text-align: center;
+        /* Security Note (From Example) */
+        .security-note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.25rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            color: #92400e;
+            font-size: 0.95rem;
         }
 
-        .meta-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
-        }
-
-        .meta-value {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .portfolio-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn-small {
+        .btn-view {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            flex: 1;
             text-align: center;
         }
 
-        .btn-view {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-view:hover {
-            background: var(--primary-dark);
-        }
-
-        .btn-code {
-            background: var(--bg-light);
-            color: var(--text-primary);
-            border: 2px solid var(--border);
-        }
-
-        .btn-code:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-            align-items: start;
-        }
-
-        .about-content {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .about-content h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .about-content p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .skills-list {
-            list-style: none;
-            display: grid;
-            gap: 0.75rem;
-        }
-
-        .skills-list li {
-            padding: 0.75rem;
-            background: var(--bg-light);
-            border-radius: 8px;
-            padding-left: 2.5rem;
-            position: relative;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .skills-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0.75rem;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-primary);
-            color: white;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 2rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: rgba(255,255,255,0.6);
-        }
+        footer { background: var(--text-primary); color: white; padding: 3rem 2rem; text-align: center; margin-top: 4rem; }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.25rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+
     <header class="hero">
         <div class="hero-content">
             <h1>Brady Redfearn, PhD</h1>
             <p class="tagline">Chaos is my fuel. Ambiguity is my playground.</p>
-            <p class="subtitle">Senior Product Leader | UX Research | Cultural Transformation</p>
-            
-            <div class="hero-badges">
-                <span class="badge">SaaS & Product-Led Growth</span>
-                <span class="badge">AI Integration</span>
-                <span class="badge">Systems Engineering</span>
-                <span class="badge">UX Research</span>
-            </div>
-
+            <p class="subtitle">Senior Product Leader | Systems Engineering | Cultural Transformation</p>
             <div class="cta-buttons">
-                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
-                <a href="https://www.linkedin.com/in/redfearnb/" class="btn btn-secondary" target="_blank">LinkedIn Profile</a>
+                <a href="#portfolio" class="btn-view" style="background: white; color: var(--primary);">View Portfolio</a>
             </div>
         </div>
     </header>
 
-    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-content">
-            <div style="font-weight: 700; font-size: 1.1rem; color: var(--primary);">BR</div>
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--primary);">BR</div>
             <ul class="nav-links">
-                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="https://www.redfearn.group" target="_blank">Redfearn Group</a></li>
-                <li><a href="https://github.com/redfearnb" target="_blank">GitHub</a></li>
+                <li><a href="#competencies">Competencies</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Portfolio Section -->
     <div class="container">
-        <section id="portfolio" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Executive Portfolio</h2>
-                <p class="section-subtitle">Demonstrating strategic leadership, technical execution, and measurable business impact</p>
-            </div>
+        <section id="about" class="section">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Strategy</h2>
+            <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 800px;">
+                I bridge the gap between complex engineering systems and intuitive human experiences. With a PhD in Systems Engineering and 16+ years of leadership, I specialize in scaling AI, defense tech, and enterprise SaaS from ambiguity to high-velocity delivery.
+            </p>
+        </section>
 
-            <div class="portfolio-grid">
-                <!-- Leadership Impact Dashboard -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header leadership">
-                        <span class="portfolio-type">Leadership Excellence</span>
-                        <h3>Leadership Impact Dashboard</h3>
-                        <p style="opacity: 0.95; margin-top: 0.5rem;">Quantifiable leadership outcomes across team growth, portfolio management, and organizational transformation</p>
-                    </div>
-                    <div class="portfolio-content">
-                        <p class="portfolio-description">
-                            Comprehensive dashboard showcasing 16+ years of measurable leadership impact: scaled portfolios to $45M, tripled delivery capacity, mentored 200+ professionals, and drove cultural transformation at three organizations. Demonstrates team enablement philosophy and systematic approach to building high-performing product organizations.
-                        </p>
-                        
-                        <div class="portfolio-tags">
-                            <span class="tag">Team Scaling</span>
-                            <span class="tag">Portfolio Growth</span>
-                            <span class="tag">Cultural Transformation</span>
-                            <span class="tag">Operational Excellence</span>
-                        </div>
-
-                        <div class="portfolio-meta">
-                            <div class="meta-item">
-                                <div class="meta-label">Portfolio Scale</div>
-                                <div class="meta-value">$45M</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Capacity Increase</div>
-                                <div class="meta-value">3x</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Revenue Growth</div>
-                                <div class="meta-value">2x</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">People Developed</div>
-                                <div class="meta-value">200+</div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-actions">
-                            <a href="https://redfearnb.github.io/leadership-impact-dashboard/" class="btn-small btn-view" target="_blank">View Dashboard</a>
-                            <a href="https://github.com/redfearnb/leadership-impact-dashboard" class="btn-small btn-code" target="_blank">View Source</a>
-                        </div>
-                    </div>
+        <section id="competencies" class="section">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 3px solid var(--primary); display: inline-block;">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Product Leadership</h3>
+                    <ul>
+                        <li>AI/LLM Productization</li>
+                        <li>SaaS & Product-Led Growth</li>
+                        <li>Portfolio Scale ($45M+)</li>
+                        <li>Roadmap Prioritization</li>
+                    </ul>
                 </div>
-
-                <!-- Product Prioritization Framework -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header product">
-                        <span class="portfolio-type">Product Strategy Tool</span>
-                        <h3>Strategic Product Prioritization Framework</h3>
-                        <p style="opacity: 0.95; margin-top: 0.5rem;">Multi-criteria decision analysis for complex product portfolios</p>
-                    </div>
-                    <div class="portfolio-content">
-                        <p class="portfolio-description">
-                            Interactive weighted scoring model for evaluating product initiatives across six critical dimensions: customer value, business impact, technical feasibility, strategic fit, compliance requirements, and time-to-value. Based on proven methodology managing $45M+ portfolios across government and commercial sectors.
-                        </p>
-                        
-                        <div class="portfolio-tags">
-                            <span class="tag">Product Strategy</span>
-                            <span class="tag">Decision Framework</span>
-                            <span class="tag">Portfolio Management</span>
-                            <span class="tag">Stakeholder Alignment</span>
-                        </div>
-
-                        <div class="portfolio-meta">
-                            <div class="meta-item">
-                                <div class="meta-label">Criteria</div>
-                                <div class="meta-value">6</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Weighted</div>
-                                <div class="meta-value">Yes</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Interactive</div>
-                                <div class="meta-value">Live</div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-actions">
-                            <a href="https://redfearnb.github.io/product-prioritization-framework/" class="btn-small btn-view" target="_blank">Try Live Tool</a>
-                            <a href="https://github.com/redfearnb/product-prioritization-framework" class="btn-small btn-code" target="_blank">View Source</a>
-                        </div>
-                    </div>
+                <div class="skill-card">
+                    <h3>Systems Engineering</h3>
+                    <ul>
+                        <li>PhD Level Architectures</li>
+                        <li>Technical Enablement</li>
+                        <li>Requirement Validation</li>
+                        <li>Process Automation</li>
+                    </ul>
                 </div>
-
-                <!-- Cultural Transformation Case Study -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <span class="portfolio-type">Leadership Case Study</span>
-                        <h3>Cultural Transformation: Building a UX-First Organization</h3>
-                        <p style="opacity: 0.95; margin-top: 0.5rem;">How I transformed a software development company into "a UX company"</p>
-                    </div>
-                    <div class="portfolio-content">
-                        <p class="portfolio-description">
-                            End-to-end organizational transformation demonstrating C-level leadership capabilities. Built UX team from 0 to 8 professionals, integrated user-centered design into company DNA, and drove measurable business results including 300% increase in UX maturity and 40% improvement in customer satisfaction.
-                        </p>
-                        
-                        <div class="portfolio-tags">
-                            <span class="tag">Organizational Change</span>
-                            <span class="tag">Team Building</span>
-                            <span class="tag">Executive Leadership</span>
-                            <span class="tag">Culture Development</span>
-                        </div>
-
-                        <div class="portfolio-meta">
-                            <div class="meta-item">
-                                <div class="meta-label">Timeline</div>
-                                <div class="meta-value">18 months</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Team Growth</div>
-                                <div class="meta-value">0 → 8</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">UX Maturity</div>
-                                <div class="meta-value">+300%</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">CSAT</div>
-                                <div class="meta-value">+40%</div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-actions">
-                            <a href="https://redfearnb.github.io/cultural-transformation-case-study/" class="btn-small btn-view" target="_blank">View Case Study</a>
-                            <a href="https://github.com/redfearnb/cultural-transformation-case-study" class="btn-small btn-code" target="_blank">View Source</a>
-                        </div>
-                    </div>
+                <div class="skill-card">
+                    <h3>UX Research</h3>
+                    <ul>
+                        <li>Thematic Analysis</li>
+                        <li>Usability Benchmarking</li>
+                        <li>Stakeholder Presentations</li>
+                        <li>Cultural Transformation</li>
+                    </ul>
                 </div>
-
-                <!-- UX Research Tools -->
-                <div class="portfolio-item">
-                    <div class="portfolio-header">
-                        <span class="portfolio-type">Interactive Tool</span>
-                        <h3>UX Research Tools Suite</h3>
-                        <p style="opacity: 0.95; margin-top: 0.5rem;">Executive-level research tools for data-driven decision making</p>
-                    </div>
-                    <div class="portfolio-content">
-                        <p class="portfolio-description">
-                            Production-ready research tools demonstrating both UX expertise and technical implementation capability. Includes usability testing calculator with statistical analysis and research insight repository with search and synthesis features. Built with security-first, privacy-conscious architecture.
-                        </p>
-                        
-                        <div class="portfolio-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Statistical Analysis</span>
-                            <span class="tag">UX Research</span>
-                            <span class="tag">Data Visualization</span>
-                        </div>
-
-                        <div class="portfolio-meta">
-                            <div class="meta-item">
-                                <div class="meta-label">Tech Stack</div>
-                                <div class="meta-value">React</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Features</div>
-                                <div class="meta-value">2 Tools</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Security</div>
-                                <div class="meta-value">Client-Side</div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-actions">
-                            <a href="https://redfearnb.github.io/ux-research-tools/" class="btn-small btn-view" target="_blank">Try Live Demo</a>
-                            <a href="https://github.com/redfearnb/ux-research-tools" class="btn-small btn-code" target="_blank">View Source</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Future Portfolio Items Placeholder -->
-                <div class="portfolio-item" style="opacity: 0.7;">
-                    <div class="portfolio-header" style="background: linear-gradient(135deg, #64748b, #475569);">
-                        <span class="portfolio-type">Coming Soon</span>
-                        <h3>Enterprise Case Studies</h3>
-                        <p style="opacity: 0.95; margin-top: 0.5rem;">IBM, DOE, FEMA, and Special Operations Projects</p>
-                    </div>
-                    <div class="portfolio-content">
-                        <p class="portfolio-description">
-                            Detailed case studies from high-impact projects with major enterprise and government clients. Includes product strategy, user research methodologies, AI/LLM integration, and measurable business outcomes. Content sanitized for public sharing while preserving strategic insights.
-                        </p>
-                        
-                        <div class="portfolio-tags">
-                            <span class="tag">Enterprise SaaS</span>
-                            <span class="tag">Government Contracting</span>
-                            <span class="tag">AI/LLM Products</span>
-                            <span class="tag">Product Strategy</span>
-                        </div>
-
-                        <div style="margin-top: 2rem; padding: 1rem; background: var(--bg-light); border-radius: 8px; text-align: center;">
-                            <p style="color: var(--text-secondary); font-weight: 600;">Additional case studies in development</p>
-                        </div>
-                    </div>
+                <div class="skill-card">
+                    <h3>Security & Gov</h3>
+                    <ul>
+                        <li>Secret Clearance</li>
+                        <li>CMMC / NIST Compliance</li>
+                        <li>DOE/FEMA Contracting</li>
+                        <li>Ethical Data Handling</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Product leader bridging complex systems and intuitive user experiences</p>
+        <section id="portfolio" class="section">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Executive Portfolio</h2>
+            
+            <div class="security-note">
+                <strong>Privacy-First Architecture:</strong> All interactive tools in this portfolio use client-side processing only. No data is stored, transmitted, or persistent beyond your current session.
             </div>
 
-            <div class="about-grid">
-                <div class="about-content">
-                    <h3>Strategic Leadership in Product & UX</h3>
-                    <p>
-                        I'm a Senior Technical Product Leader with a PhD in Systems Engineering and 16+ years building and scaling teams that deliver commercial-grade AI, cybersecurity, and enterprise SaaS products. I'm technically fluent—I vibe code when needed—but my real value is enabling engineering, design, and research teams to execute reliably.
-                    </p>
-                    <p>
-                        With deep expertise in AI/LLM productization, government contracting (DOE, FEMA, Special Operations), and Product-Led Growth, I've led organizational transformations that embed user experience into company DNA. I've scaled portfolios to $45M, tripled delivery capacity, and secured major government contracts totaling $40M+.
-                    </p>
-                    <p>
-                        My approach combines rigorous research methodology with pragmatic business thinking. I translate technical tradeoffs into clear product decisions, remove execution blockers, and institute repeatable processes that enable teams to deliver autonomously. That's how you scale from managing 1 team to 12+ people across 5 concurrent programs without chaos.
-                    </p>
-                    <p style="font-weight: 600; color: var(--primary); margin-top: 1.5rem;">
-                        I'm currently seeking C-level opportunities (Chief Product Officer, VP of Product, Chief Experience Officer) where I can drive organizational transformation and business growth through strategic product leadership and team enablement.
-                    </p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-header" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
+                        <h3>Leadership Impact Dashboard</h3>
+                        <p>Quantifiable outcomes across team growth and organizational transformation.</p>
+                    </div>
+                    <div class="portfolio-content">
+                        <p>A comprehensive view of my leadership philosophy: scaling portfolios to $45M, tripling delivery capacity, and mentoring 200+ professionals.</p>
+                        <div class="portfolio-meta">
+                            <div><strong>Capacity</strong><br>3x Increase</div>
+                            <div><strong>Managed</strong><br>$45M Scope</div>
+                            <div><strong>Mentored</strong><br>200+ People</div>
+                        </div>
+                        <a href="./leadership-impact-dashboard/" class="btn-view">View Dashboard</a>
+                    </div>
                 </div>
 
-                <div>
-                    <div class="about-content">
-                        <h3>Core Strengths</h3>
-                        <ul class="skills-list">
-                            <li>Product Strategy & Roadmapping</li>
-                            <li>Team Scaling & Enablement</li>
-                            <li>AI/LLM Productization</li>
-                            <li>UX Research & Customer Discovery</li>
-                            <li>Government Contracting (Secret Clearance)</li>
-                            <li>SaaS & PLG Expertise</li>
-                            <li>Systems Engineering</li>
-                            <li>Cultural Transformation</li>
-                        </ul>
+                <div class="portfolio-item">
+                    <div class="portfolio-header" style="background: linear-gradient(135deg, #059669, #10b981);">
+                        <h3>Product Prioritization Framework</h3>
+                        <p>Interactive weighted scoring model for complex product roadmaps.</p>
+                    </div>
+                    <div class="portfolio-content">
+                        <p>MCDA model used to secure $40M+ in government contracts by aligning technical feasibility with strategic mission value.</p>
+                        <div class="portfolio-meta">
+                            <div><strong>Criteria</strong><br>6 Dimensions</div>
+                            <div><strong>Method</strong><br>Weighted MCDA</div>
+                            <div><strong>Logic</strong><br>Client-Side JS</div>
+                        </div>
+                        <a href="./product-prioritization-framework/" class="btn-view">Try the Framework</a>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Brady Redfearn, PhD</h3>
-                <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">
-                    Senior Technical Product Leader with 16+ years scaling teams and portfolios across defense, AI, and enterprise SaaS. Ready for C-level challenges in product and experience leadership.
-                </p>
-            </div>
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <ul class="footer-links">
-                    <li><a href="https://www.linkedin.com/in/redfearnb/" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://github.com/redfearnb" target="_blank">GitHub</a></li>
-                    <li><a href="https://www.redfearn.group" target="_blank">Redfearn Group</a></li>
-                    <li><a href="https://orcid.org/0000-0003-3074-2083" target="_blank">ORCID</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Location</h3>
-                <p style="color: rgba(255,255,255,0.7);">
-                    Spanish Fork, Utah<br>
-                    Open to remote & relocation
-                </p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Brady Redfearn. All portfolio tools built with privacy-first, client-side architecture.</p>
-        </div>
+        <p>&copy; 2026 Brady Redfearn, PhD | Spanish Fork, Utah</p>
+        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">PhD in Systems Engineering. Specializing in AI & Product Strategy.</p>
     </footer>
 </body>
 </html>
