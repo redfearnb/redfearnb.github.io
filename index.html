@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brady Redfearn, PhD | Executive Product Leadership</title>
-    <meta name="description" content="Senior Product Leader specializing in SaaS, AI, and Systems Engineering. PhD-level strategic execution.">
+    <meta name="description" content="Senior Technical Product Leader specializing in AI Strategy, Systems Engineering, and Portfolio Scale.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #4f46e5;
             --primary-dark: #3730a3;
             --secondary: #10b981;
-            --indigo-dark: #1e1b4b;
+            --indigo-dark: #0f172a;
             --text-primary: #0f172a;
             --text-secondary: #475569;
             --bg-light: #f8fafc;
@@ -27,14 +27,14 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             color: white;
             padding: 6rem 2rem;
             text-align: center;
         }
 
         .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
-        .hero .tagline { font-size: 1.5rem; font-weight: 300; opacity: 0.9; margin-bottom: 2rem; }
+        .hero .tagline { font-size: 1.5rem; font-weight: 300; opacity: 0.9; margin-bottom: 2rem; font-style: italic; }
         .hero-badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
         .h-badge { background: rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); }
 
@@ -57,7 +57,7 @@
         }
 
         .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
         /* Container */
         .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
@@ -66,7 +66,7 @@
         /* Competencies Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             margin-top: 2.5rem;
         }
@@ -79,13 +79,13 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .skill-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.02em; }
+        .skill-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.02em; }
         .skill-card ul { list-style: none; color: var(--text-secondary); }
-        .skill-card li { padding: 0.4rem 0; padding-left: 1.25rem; position: relative; font-size: 0.95rem; }
+        .skill-card li { padding: 0.4rem 0; padding-left: 1.25rem; position: relative; font-size: 0.9rem; }
         .skill-card li:before { content: "→"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
         /* Portfolio Grid */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin-top: 2rem; }
         .portfolio-item {
             background: white;
             border-radius: 16px;
@@ -97,9 +97,9 @@
         }
 
         .portfolio-item:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .port-header { padding: 2.5rem; color: white; min-height: 180px; display: flex; flex-direction: column; justify-content: center; }
-        .port-body { padding: 2.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .port-body p { color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1; }
+        .port-header { padding: 2rem; color: white; min-height: 160px; display: flex; flex-direction: column; justify-content: center; }
+        .port-body { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .port-body p { color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1; font-size: 0.95rem; }
 
         .port-meta {
             display: grid;
@@ -112,21 +112,19 @@
         }
 
         .meta-val { font-weight: 800; color: var(--indigo-dark); font-size: 1.1rem; }
-        .meta-lab { font-size: 0.65rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700; letter-spacing: 0.05em; }
+        .meta-lab { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700; letter-spacing: 0.05em; }
 
         .btn-action {
             display: block;
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 1rem;
+            padding: 0.9rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
             transition: 0.2s;
         }
-
-        .btn-action:hover { background: var(--primary-dark); }
 
         .privacy-note {
             background: #ecfdf5;
@@ -140,7 +138,7 @@
             text-align: center;
         }
 
-        footer { background: var(--indigo-dark); color: white; padding: 4rem 2rem; text-align: center; }
+        footer { background: var(--indigo-dark); color: white; padding: 5rem 2rem; text-align: center; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
@@ -153,142 +151,146 @@
     <header class="hero">
         <div class="hero-content">
             <h1>Brady Redfearn, PhD</h1>
-            <p class="tagline">Senior Technical Product Leader & Systems Architect</p>
+            <p class="tagline">Chaos is my fuel. Ambiguity is my playground.</p>
             <div class="hero-badges">
                 <span class="h-badge">PhD Systems Engineering</span>
-                <span class="h-badge">SaaS Strategy</span>
-                <span class="h-badge">AI/LLM Productization</span>
-                <span class="h-badge">Executive Leadership</span>
+                <span class="h-badge">AI Product Strategist</span>
+                <span class="h-badge">Managed Scope: $45M</span>
+                <span class="h-badge">C-Suite Advisor</span>
             </div>
         </div>
     </header>
 
     <nav class="nav">
         <div class="nav-content">
-            <div style="font-weight: 900; color: var(--primary); font-size: 1.4rem;">BR.EXE</div>
+            <div style="font-weight: 900; color: var(--primary); font-size: 1.4rem;">BRADY.PhD</div>
             <ul class="nav-links">
                 <li><a href="#about">Strategy</a></li>
-                <li><a href="#competencies">Expertise</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#portfolio">Pillars of Impact</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
+        
         <section id="about" class="section">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">The Strategic Mandate</h2>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Architecting Clarity</h2>
             <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 900px; line-height: 1.8;">
-                I bridge the gap between high-end academic rigor and massive-scale commercial execution. With a PhD in Systems Engineering and 16+ years of experience, I architect the organizational systems that allow AI, defense tech, and enterprise SaaS to scale from ambiguity to multi-million dollar outcomes.
+                I apply **PhD-level Systems Engineering** to organizational and product development challenges. From scaling a $45M portfolio to architecting enterprise-wide AI modernization, I build the frameworks that allow high-growth teams to deliver commercial-grade solutions at the frontier of technology and security.
             </p>
-        </section>
-
-        <section id="competencies" class="section">
+            
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Technical Product</h3>
+                    <h3>AI & Future-Tech</h3>
                     <ul>
-                        <li>AI/LLM Lifecycle Management</li>
-                        <li>SaaS Product-Led Growth</li>
-                        <li>GTM Pipeline Support ($51B)</li>
+                        <li>Agentic Architectures</li>
+                        <li>Modernization Roadmaps</li>
+                        <li>LLM Lifecycle Management</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Systems Engineering</h3>
+                    <h3>Strategic Execution</h3>
                     <ul>
-                        <li>PhD Level Architectures</li>
-                        <li>MCDA Decision Logic</li>
-                        <li>Operational Assessment</li>
+                        <li>MCDA Prioritization</li>
+                        <li>GTM Strategy ($51B)</li>
+                        <li>Vendor Ecosystem Logic</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Insight Operations</h3>
+                    <h3>Systems Design</h3>
                     <ul>
-                        <li>Statistical Validation</li>
-                        <li>Scaled UX Transformation</li>
-                        <li>ResearchOps Frameworks</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Executive Governance</h3>
-                    <ul>
-                        <li>C-Suite Stakeholder Alignment</li>
-                        <li>CMMC / NIST Compliance</li>
-                        <li>Federal & Commercial GTM</li>
+                        <li>ResearchOps Scaling</li>
+                        <li>NIST RMF Compliance</li>
+                        <li>Secure Data Handling</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="portfolio" class="section">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Executive Portfolio</h2>
-            
             <div class="privacy-note">
-                🛡️ Privacy-by-Design: All interactive tools utilize client-side execution. No proprietary or personal data is transmitted.
+                🛡️ Privacy-First Architecture: All interactive assets utilize client-side execution to ensure the highest standards of data integrity.
             </div>
 
             <div class="portfolio-grid">
                 
                 <div class="portfolio-item">
-                    <div class="port-header" style="background: linear-gradient(135deg, #1e1b4b, #3730a3);">
-                        <h3>Leadership Impact Dashboard</h3>
-                        <p style="opacity: 0.8; font-size: 0.95rem; margin-top: 0.5rem;">Operational excellence across a $45M portfolio.</p>
+                    <div class="port-header" style="background: linear-gradient(135deg, #1e1b4b, #4f46e5);">
+                        <h3>AI Strategic Maturity Hub</h3>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">The Roadmap to Enterprise AI Modernization.</p>
                     </div>
                     <div class="port-body">
-                        <p>Driving 3x capacity increases and doubling revenue through rigorous operational cadence and team enablement.</p>
+                        <p>Architecting the transition from manual silos to agentic-integrated organizations using Systems Engineering logic.</p>
                         <div class="port-meta">
-                            <div><div class="meta-val">3x</div><div class="meta-lab">Capacity</div></div>
-                            <div><div class="meta-val">$45M</div><div class="meta-lab">Portfolio</div></div>
-                            <div><div class="meta-val">200+</div><div class="meta-lab">Mentored</div></div>
+                            <div><div class="meta-val">3 Stage</div><div class="meta-lab">Model</div></div>
+                            <div><div class="meta-val">NIST</div><div class="meta-lab">Ethics</div></div>
+                            <div><div class="meta-val">ROI</div><div class="meta-lab">Driven</div></div>
                         </div>
-                        <a href="./leadership-impact-dashboard/" class="btn-action">View Dashboard</a>
+                        <a href="./ai-strategy-hub/" class="btn-action">Access the Hub</a>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <div class="port-header" style="background: linear-gradient(135deg, #065f46, #10b981);">
-                        <h3>MCDA Support Framework</h3>
-                        <p style="opacity: 0.8; font-size: 0.95rem; margin-top: 0.5rem;">Multi-Criteria Decision Analysis for strategic resource allocation.</p>
+                    <div class="port-header" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
+                        <h3>Leadership Impact Dashboard</h3>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Quantifiable outcomes across a $45M portfolio.</p>
                     </div>
                     <div class="port-body">
-                        <p>Applying Systems Engineering logic to remove subjectivity from multi-million dollar product roadmaps.</p>
+                        <p>Demonstrating team enablement, delivery capacity tripling, and the conversion of prototypes to commercial proof-of-concepts.</p>
                         <div class="port-meta">
-                            <div><div class="meta-val">6</div><div class="meta-lab">Dimensions</div></div>
+                            <div><div class="meta-val">3x</div><div class="meta-lab">Capacity</div></div>
+                            <div><div class="meta-val">$45M</div><div class="meta-lab">Managed</div></div>
+                            <div><div class="meta-val">16yr</div><div class="meta-lab">Track Record</div></div>
+                        </div>
+                        <a href="./leadership-impact-dashboard/" class="btn-action">View Impact</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="port-header" style="background: linear-gradient(135deg, #064e3b, #10b981);">
+                        <h3>MCDA Support Framework</h3>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Removing subjectivity from resource allocation.</p>
+                    </div>
+                    <div class="port-body">
+                        <p>Interactive tool applying Multi-Criteria Decision Analysis to prioritize roadmaps based on mathematical strategic fit.</p>
+                        <div class="port-meta">
                             <div><div class="meta-val">PhD</div><div class="meta-lab">Logic</div></div>
-                            <div><div class="meta-val">MCDA</div><div class="meta-lab">Model</div></div>
+                            <div><div class="meta-val">MCDA</div><div class="meta-lab">Index</div></div>
+                            <div><div class="meta-val">$200K</div><div class="meta-lab">Avoidance</div></div>
                         </div>
                         <a href="./product-prioritization-framework/" class="btn-action">Try the Framework</a>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <div class="port-header" style="background: linear-gradient(135deg, #4338ca, #6366f1);">
+                    <div class="port-header" style="background: linear-gradient(135deg, #312e81, #6366f1);">
                         <h3>Cultural Transformation</h3>
-                        <p style="opacity: 0.8; font-size: 0.95rem; margin-top: 0.5rem;">Architecting a user-centric organizational mindset.</p>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Case Study: Evolving engineering into UX-first culture.</p>
                     </div>
                     <div class="port-body">
-                        <p>Case study on turning a traditional engineering silo into a "UX Company"—improving maturity by 300%.</p>
+                        <p>How I transformed a softwareDevelopment organization into "a UX company"—improving maturity by 300% in 18 months.</p>
                         <div class="port-meta">
-                            <div><div class="meta-val">18mo</div><div class="meta-lab">Timeline</div></div>
-                            <div><div class="meta-val">+300%</div><div class="meta-lab">UX Maturity</div></div>
+                            <div><div class="meta-val">+300%</div><div class="meta-lab">Maturity</div></div>
                             <div><div class="meta-val">-66%</div><div class="meta-lab">Rework</div></div>
+                            <div><div class="meta-val">CEO</div><div class="meta-lab">Endorsed</div></div>
                         </div>
                         <a href="./cultural-transformation-case-study/" class="btn-action">Read Case Study</a>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <div class="port-header" style="background: linear-gradient(135deg, #b45309, #f59e0b);">
+                    <div class="port-header" style="background: linear-gradient(135deg, #92400e, #f59e0b);">
                         <h3>Insight Operations Suite</h3>
-                        <p style="opacity: 0.8; font-size: 0.95rem; margin-top: 0.5rem;">Statistical validation tools for ResearchOps.</p>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Statistical validation tools for ResearchOps.</p>
                     </div>
                     <div class="port-body">
-                        <p>Bridging the gap between discovery and delivery through mathematical confidence and research repositories.</p>
+                        <p>Applying statistical power and confidence interval modeling to discovery findings to drive high-confidence product decisions.</p>
                         <div class="port-meta">
                             <div><div class="meta-val">95%</div><div class="meta-lab">Confidence</div></div>
                             <div><div class="meta-val">PII</div><div class="meta-lab">Secured</div></div>
-                            <div><div class="meta-val">Repo</div><div class="meta-lab">Enabled</div></div>
+                            <div><div class="meta-val">MCDA</div><div class="meta-lab">Ready</div></div>
                         </div>
-                        <a href="./ux-research-tools/" class="btn-action">Access Tools</a>
+                        <a href="./ux-research-tools/" class="btn-action">Access the Suite</a>
                     </div>
                 </div>
 
@@ -297,9 +299,10 @@
     </div>
 
     <footer>
-        <p style="font-weight: 800;">Brady Redfearn, PhD</p>
-        <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 0.5rem;">Outcome-oriented. Systems-driven. Executive-ready.</p>
-        <p style="opacity: 0.4; font-size: 0.7rem; margin-top: 1rem;">Spanish Fork, Utah | Senior Technical Product Leader</p>
+        <p style="font-weight: 800; font-size: 1.2rem;">Brady Redfearn, PhD</p>
+        <p style="opacity: 0.6; font-size: 0.9rem; margin-top: 0.5rem;">Senior Technical Product Leader | Systems Architect</p>
+        <p style="opacity: 0.4; font-size: 0.75rem; margin-top: 1.5rem;">Outcome-oriented. Systems-driven. Executive-ready.</p>
+        <p style="opacity: 0.3; font-size: 0.7rem; margin-top: 2rem;">© 2026 Brady Edwin Redfearn | Spanish Fork, Utah</p>
     </footer>
 </body>
 </html>
