@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brady Redfearn, PhD | Executive Product Leadership</title>
-    <meta name="description" content="Senior Technical Product Leader specializing in AI Strategy, Systems Engineering, and Portfolio Scale.">
+    <meta name="description" content="Senior Technical Product Leader specializing in AI Strategy, Systems Engineering, and Cyber-Resilience.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #4f46e5;
             --primary-dark: #3730a3;
             --secondary: #10b981;
+            --cyber: #0ea5e9;
             --indigo-dark: #0f172a;
             --text-primary: #0f172a;
             --text-secondary: #475569;
@@ -84,8 +85,8 @@
         .skill-card li { padding: 0.4rem 0; padding-left: 1.25rem; position: relative; font-size: 0.9rem; }
         .skill-card li:before { content: "→"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-        /* Portfolio Grid */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        /* Portfolio Grid (Optimized for 6 cards) */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 2rem; }
         .portfolio-item {
             background: white;
             border-radius: 16px;
@@ -111,7 +112,7 @@
             text-align: center;
         }
 
-        .meta-val { font-weight: 800; color: var(--indigo-dark); font-size: 1.1rem; }
+        .meta-val { font-weight: 800; color: var(--indigo-dark); font-size: 1rem; }
         .meta-lab { font-size: 0.6rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700; letter-spacing: 0.05em; }
 
         .btn-action {
@@ -155,7 +156,7 @@
             <div class="hero-badges">
                 <span class="h-badge">PhD Systems Engineering</span>
                 <span class="h-badge">AI Product Strategist</span>
-                <span class="h-badge">Managed Scope: $45M</span>
+                <span class="h-badge">NIST/FedRAMP Compliance</span>
                 <span class="h-badge">C-Suite Advisor</span>
             </div>
         </div>
@@ -163,7 +164,7 @@
 
     <nav class="nav">
         <div class="nav-content">
-            <div style="font-weight: 900; color: var(--primary); font-size: 1.4rem;">Brady Redfearn, PhD</div>
+            <div style="font-weight: 900; color: var(--primary); font-size: 1.4rem;">BRADY.PhD</div>
             <ul class="nav-links">
                 <li><a href="#about">Strategy</a></li>
                 <li><a href="#portfolio">Pillars of Impact</a></li>
@@ -174,34 +175,42 @@
     <div class="container">
         
         <section id="about" class="section">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Architecting Clarity</h2>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">The Strategic Architecture</h2>
             <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 900px; line-height: 1.8;">
-                I apply PhD-level Systems Engineering to organizational and product development challenges. From scaling a $45M portfolio to architecting enterprise-wide AI modernization, I build the frameworks that allow high-growth teams to deliver commercial-grade solutions at the frontier of technology and security.
+                I architect the technical and organizational systems that allow high-growth teams to scale from ambiguity to multi-million dollar commercial outcomes. My methodology bridges **PhD-level academic rigor** with high-velocity product execution across AI, Cybersecurity, and Enterprise SaaS.
             </p>
             
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>AI & Future-Tech</h3>
+                    <h3>Future-Tech</h3>
                     <ul>
-                        <li>Agentic Architectures</li>
-                        <li>Modernization Roadmaps</li>
-                        <li>LLM Lifecycle Management</li>
+                        <li>AI Strategy & Agents</li>
+                        <li>SaaS Scale (PLG)</li>
+                        <li>Technical Roadmaps</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Strategic Execution</h3>
+                    <h3>Decision Science</h3>
                     <ul>
-                        <li>MCDA Prioritization</li>
-                        <li>GTM Strategy ($51B)</li>
-                        <li>Vendor Ecosystem Logic</li>
+                        <li>MCDA Model Design</li>
+                        <li>GTM Pipeline ($51B)</li>
+                        <li>Resource Optimization</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Systems Design</h3>
+                    <h3>Secure Infrastructure</h3>
+                    <ul>
+                        <li>NIST 800-53/171</li>
+                        <li>FedRAMP Standards</li>
+                        <li>DHS/INL Collaboration</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Systems Leadership</h3>
                     <ul>
                         <li>ResearchOps Scaling</li>
-                        <li>NIST RMF Compliance</li>
-                        <li>Secure Data Handling</li>
+                        <li>Cultural Transformation</li>
+                        <li>Stakeholder Alignment</li>
                     </ul>
                 </div>
             </div>
@@ -209,7 +218,7 @@
 
         <section id="portfolio" class="section">
             <div class="privacy-note">
-                🛡️ Privacy-First Architecture: All interactive assets utilize client-side execution to ensure the highest standards of data integrity.
+                🛡️ Privacy-First Architecture: All interactive assets utilize client-side execution to ensure the highest standards of data integrity and federal-grade security.
             </div>
 
             <div class="portfolio-grid">
@@ -217,62 +226,78 @@
                 <div class="portfolio-item">
                     <div class="port-header" style="background: linear-gradient(135deg, #1e1b4b, #4f46e5);">
                         <h3>AI Strategic Maturity Hub</h3>
-                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">The Roadmap to Enterprise AI Modernization.</p>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Enterprise AI Modernization Roadmap.</p>
                     </div>
                     <div class="port-body">
-                        <p>Architecting the transition from manual silos to agentic-integrated organizations using Systems Engineering logic.</p>
+                        <p>Architecting the transition from manual silos to autonomous agentic workflows using Systems Engineering logic.</p>
                         <div class="port-meta">
                             <div><div class="meta-val">3 Stage</div><div class="meta-lab">Model</div></div>
+                            <div><div class="meta-val">Agentic</div><div class="meta-lab">Logic</div></div>
                             <div><div class="meta-val">NIST</div><div class="meta-lab">Ethics</div></div>
-                            <div><div class="meta-val">ROI</div><div class="meta-lab">Driven</div></div>
                         </div>
-                        <a href="./ai-strategy-hub/" class="btn-action">Access the Hub</a>
+                        <a href="./ai-strategy-hub/" class="btn-action">Access Hub</a>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
                     <div class="port-header" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
                         <h3>Leadership Impact Dashboard</h3>
-                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Quantifiable outcomes across a $45M portfolio.</p>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Outcomes across a $45M portfolio.</p>
                     </div>
                     <div class="port-body">
-                        <p>Demonstrating team enablement, delivery capacity tripling, and the conversion of prototypes to commercial proof-of-concepts.</p>
+                        <p>Demonstrating team enablement, 3x delivery capacity growth, and the successful commercialization of lab prototypes.</p>
                         <div class="port-meta">
                             <div><div class="meta-val">3x</div><div class="meta-lab">Capacity</div></div>
-                            <div><div class="meta-val">$45M</div><div class="meta-lab">Managed</div></div>
-                            <div><div class="meta-val">16yr</div><div class="meta-lab">Track Record</div></div>
+                            <div><div class="meta-val">$45M</div><div class="meta-lab">Scope</div></div>
+                            <div><div class="meta-val">$26M</div><div class="meta-lab">DOE Win</div></div>
                         </div>
                         <a href="./leadership-impact-dashboard/" class="btn-action">View Impact</a>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <div class="port-header" style="background: linear-gradient(135deg, #064e3b, #10b981);">
-                        <h3>MCDA Support Framework</h3>
-                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Removing subjectivity from resource allocation.</p>
+                    <div class="port-header" style="background: linear-gradient(135deg, #020617, #0369a1);">
+                        <h3>Cyber-Resilience & Infra</h3>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">DHS & INL Infrastructure Protection.</p>
                     </div>
                     <div class="port-body">
-                        <p>Interactive tool applying Multi-Criteria Decision Analysis to prioritize roadmaps based on mathematical strategic fit.</p>
+                        <p>Detailed analysis of IoT Ransomware and IIoT vulnerabilities. Expert in NIST 800-53 and FedRAMP compliance.</p>
+                        <div class="port-meta">
+                            <div><div class="meta-val">NIST</div><div class="meta-lab">Compliance</div></div>
+                            <div><div class="meta-val">FedRAMP</div><div class="meta-lab">Ready</div></div>
+                            <div><div class="meta-val">DHS</div><div class="meta-lab">Advisory</div></div>
+                        </div>
+                        <a href="./cyber-resilience-hub/" class="btn-action">Access Hub</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="port-header" style="background: linear-gradient(135deg, #064e3b, #10b981);">
+                        <h3>MCDA Support Framework</h3>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Mathematical resource allocation.</p>
+                    </div>
+                    <div class="port-body">
+                        <p>Interactive tool using Multi-Criteria Decision Analysis to objectively prioritize roadmaps for technical organizations.</p>
                         <div class="port-meta">
                             <div><div class="meta-val">PhD</div><div class="meta-lab">Logic</div></div>
                             <div><div class="meta-val">MCDA</div><div class="meta-lab">Index</div></div>
-                            <div><div class="meta-val">$200K</div><div class="meta-lab">Avoidance</div></div>
+                            <div><div class="meta-val">$200K</div><div class="meta-lab">Savings</div></div>
                         </div>
-                        <a href="./product-prioritization-framework/" class="btn-action">Try the Framework</a>
+                        <a href="./product-prioritization-framework/" class="btn-action">Try Tool</a>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
                     <div class="port-header" style="background: linear-gradient(135deg, #312e81, #6366f1);">
                         <h3>Cultural Transformation</h3>
-                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Case Study: Evolving engineering into UX-first culture.</p>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Evolving engineering into UX-first culture.</p>
                     </div>
                     <div class="port-body">
-                        <p>How I transformed a softwareDevelopment organization into "a UX company"—improving maturity by 300% in 18 months.</p>
+                        <p>Case study on scaling UX maturity by 300% and reducing development rework by 66% through organizational systems change.</p>
                         <div class="port-meta">
                             <div><div class="meta-val">+300%</div><div class="meta-lab">Maturity</div></div>
                             <div><div class="meta-val">-66%</div><div class="meta-lab">Rework</div></div>
-                            <div><div class="meta-val">CEO</div><div class="meta-lab">Endorsed</div></div>
+                            <div><div class="meta-val">18mo</div><div class="meta-lab">Shift</div></div>
                         </div>
                         <a href="./cultural-transformation-case-study/" class="btn-action">Read Case Study</a>
                     </div>
@@ -281,16 +306,16 @@
                 <div class="portfolio-item">
                     <div class="port-header" style="background: linear-gradient(135deg, #92400e, #f59e0b);">
                         <h3>Insight Operations Suite</h3>
-                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Statistical validation tools for ResearchOps.</p>
+                        <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Statistical validation for ResearchOps.</p>
                     </div>
                     <div class="port-body">
-                        <p>Applying statistical power and confidence interval modeling to discovery findings to drive high-confidence product decisions.</p>
+                        <p>Applying 95% Confidence Interval modeling to product discovery to ensure engineering efforts are grounded in data.</p>
                         <div class="port-meta">
                             <div><div class="meta-val">95%</div><div class="meta-lab">Confidence</div></div>
                             <div><div class="meta-val">PII</div><div class="meta-lab">Secured</div></div>
-                            <div><div class="meta-val">MCDA</div><div class="meta-lab">Ready</div></div>
+                            <div><div class="meta-val">Stat</div><div class="meta-lab">Rigorous</div></div>
                         </div>
-                        <a href="./ux-research-tools/" class="btn-action">Access the Suite</a>
+                        <a href="./ux-research-tools/" class="btn-action">Access Suite</a>
                     </div>
                 </div>
 
