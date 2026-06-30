@@ -5,45 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brady Redfearn | Executive Profile</title>
     <style>
+        :root {
+            --primary: #0f172a; /* Deep slate */
+            --accent: #2563eb;  /* Professional blue */
+            --text: #334155;    /* Muted dark text */
+            --bg: #f8fafc;      /* Light gray background */
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #212529;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.05rem;
-        }
-        p {
-            font-size: 1.25rem;
-            color: #6c757d;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            padding: 2rem 1rem;
         }
-        .divider {
-            height: 2px;
-            width: 50px;
-            background-color: #0d6efd;
-            margin: 20px auto;
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -0.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .summary {
+            font-size: 1.15rem;
+            color: var(--primary);
+            max-width: 650px;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1xl));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+
+        .company {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .date {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.25rem; }
+            .item-header { flex-direction: column; }
+            .date { margin-top: 0.25rem; }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Brady Redfearn</h1>
-        <div class="divider"></div>
-        <p>A new executive profile and web space is currently under construction. Launching soon.</p>
+        <header>
+            <h1>Brady Redfearn</h1>
+            <div class="title">Senior Technology Strategist &amp; UX Research Leader</div>
+            <p class="summary">
+                Driving technology strategy, technical leadership, and user-centered systems design. Specializing in bridging the gap between complex technological infrastructure, operational excellence, and user experience research.
+            </p>
+        </header>
+
+        <section>
+            <h2>Core Expertise</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Technology Strategy</h3>
+                    <p>Aligning organizational IT initiatives with high-level business objectives and technical roadmaps.</p>
+                </div>
+                <div class="card">
+                    <h3>UX Research</h3>
+                    <p>Utilizing systems engineering methodologies to evaluate, refine, and optimize human-computer interactions.</p>
+                </div>
+                <div class="card">
+                    <h3>Technical Leadership</h3>
+                    <p>Guiding engineering standards, technical direction, and strategy without standard delivery bottlenecks.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <span class="company">Western Governors University</span><br>
+                        <strong>Senior Technology Strategist</strong>
+                    </div>
+                    <span class="date">2026 – Present</span>
+                </div>
+                <ul>
+                    <li>Lead long-term strategic technology alignment across institutional domains.</li>
+                    <li>Advise on architectural directions and user-experience considerations for technical systems.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Brady Redfearn. All rights reserved.</p>
+        </footer>
     </div>
+
 </body>
 </html>
