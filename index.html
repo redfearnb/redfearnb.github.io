@@ -1,209 +1,779 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brady Redfearn | Executive Profile</title>
-    <style>
-        :root {
-            --primary: #0f172a; /* Deep slate */
-            --accent: #2563eb;  /* Professional blue */
-            --text: #334155;    /* Muted dark text */
-            --bg: #f8fafc;      /* Light gray background */
-            --card-bg: #ffffff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brady Redfearn, PhD | AI Systems Architect</title>
+  <meta name="description" content="Senior AI Product Leader building intelligent systems at scale. WGU. PhD Systems Engineering. Advisory and consulting available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Barn Swallow + Redfearn Group Tokens ───────── */
+    :root {
+      --bg:        #07101E;   /* deep navy */
+      --surface:   #0E1E35;
+      --elevated:  #152744;
+      --text:      #E6DDD0;   /* barn swallow cream */
+      --muted:     #7B8FA6;
+      --whisper:   #2A3D55;
+      --red:       #BF1E2E;   /* Redfearn Group brand red — primary */
+      --tawny:     #D97443;   /* barn swallow tawny — warm secondary */
+      --gape:      #FFCC00;   /* barn swallow gape yellow — AI log only */
+      --green:     #3AB87D;
+      --border:    rgba(191,30,46,0.10);
+      --border-hi: rgba(191,30,46,0.28);
+      --ff-d: 'Space Grotesk', sans-serif;
+      --ff-b: 'IBM Plex Sans', sans-serif;
+      --ff-m: 'JetBrains Mono', monospace;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-b);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--red); text-decoration: none; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
+    /* ─── Nav ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2.5rem;
+      background: rgba(7,16,30,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--ff-d);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+    .nav-logo em { font-style: normal; color: var(--red); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-family: var(--ff-b);
+      transition: color 0.18s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 1.1rem;
+      border: 1px solid var(--red);
+      color: var(--red) !important;
+      font-family: var(--ff-d);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .btn-nav:hover {
+      background: var(--red);
+      color: var(--text) !important;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    /* ─── Hero ────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2.5rem 5rem;
+      overflow: hidden;
+    }
 
-        header {
-            margin-bottom: 3rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 2rem;
-        }
+    /* Signature: gape-yellow AI operations log */
+    .hero-log {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-log-inner {
+      font-family: var(--ff-m);
+      font-size: 0.68rem;
+      line-height: 2;
+      color: var(--gape);
+      opacity: 0.055;
+      white-space: pre;
+      animation: logScroll 50s linear infinite;
+      padding: 2rem;
+    }
+    @keyframes logScroll {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+    /* Ambient warm glow */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 5%; right: -5%;
+      width: 50%; height: 85%;
+      background: radial-gradient(ellipse at 70% 40%, rgba(191,30,46,0.045) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        h1 {
-            font-size: 2.75rem;
-            color: var(--primary);
-            font-weight: 800;
-            letter-spacing: -0.05rem;
-            margin-bottom: 0.5rem;
-        }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
 
-        .title {
-            font-size: 1.25rem;
-            color: var(--accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05rem;
-            margin-bottom: 1.5rem;
-        }
+    /* Eyebrow: rule in red, text in muted cream — AAA on dark */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--ff-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 26px;
+      height: 1px;
+      background: var(--red);   /* red rule, cream text — structural split */
+    }
 
-        .summary {
-            font-size: 1.15rem;
-            color: var(--primary);
-            max-width: 650px;
-        }
+    .hero h1 {
+      font-family: var(--ff-d);
+      font-size: clamp(3rem, 6.5vw, 5.25rem);
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--red); }
 
-        section {
-            margin-bottom: 2.5rem;
-        }
+    .hero-sub {
+      font-family: var(--ff-d);
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.75rem;
+    }
+    .hero-desc {
+      font-size: 0.975rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 2.75rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; gap: 0.875rem; flex-wrap: wrap; }
 
-        h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1.25rem;
-            font-weight: 700;
-            position: relative;
-        }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.75rem 1.7rem;
+      background: var(--red);
+      color: var(--text);   /* cream on red = 5.6:1 AA ✓ */
+      font-family: var(--ff-d);
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 2px;
+      transition: opacity 0.18s, transform 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); color: var(--text); }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1xl));
-            gap: 1rem;
-        }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.75rem 1.7rem;
+      border: 1px solid var(--whisper);
+      color: var(--text);
+      font-family: var(--ff-d);
+      font-weight: 500;
+      font-size: 0.875rem;
+      border-radius: 2px;
+      transition: border-color 0.18s, color 0.18s;
+    }
+    .btn-ghost:hover { border-color: var(--red); color: var(--red); }
 
-        .card {
-            background: var(--card-bg);
-            padding: 1.25rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 3.5rem;
+      padding-top: 2.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-val {
+      font-family: var(--ff-d);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--ff-m);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
 
-        .card h3 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
+    /* ─── Sections ────────────────────────────────────── */
+    .section { padding: 5rem 2.5rem; }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--ff-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 0 0 80px;
+      height: 1px;
+      background: var(--border);
+    }
 
-        .experience-item {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 1rem;
-        }
+    /* ─── WGU Featured Card ───────────────────────────── */
+    .wgu-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border-hi);
+      border-radius: 4px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2.5rem;
+      align-items: start;
+      overflow: hidden;
+    }
+    .wgu-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--tawny) 100%);
+    }
 
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 0.75rem;
-        }
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.22rem 0.65rem;
+      background: rgba(191,30,46,0.10);
+      border: 1px solid rgba(191,30,46,0.25);
+      border-radius: 99px;
+      font-family: var(--ff-m);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.1rem;
+    }
+    .live-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
-        .company {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
+    .wgu-title {
+      font-family: var(--ff-d);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 0.875rem;
+    }
+    .wgu-desc {
+      color: var(--muted);
+      font-size: 0.925rem;
+      max-width: 540px;
+      margin-bottom: 1.5rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.75rem; }
+    .tag {
+      padding: 0.22rem 0.55rem;
+      border-radius: 2px;
+      font-family: var(--ff-m);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      background: var(--elevated);
+      color: var(--muted);
+    }
+    .tag-red   { color: var(--red);   background: rgba(191,30,46,0.08); }
+    .tag-tawny { color: var(--tawny); background: rgba(217,116,67,0.08); }
 
-        .date {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
+    .wgu-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      padding: 1.5rem;
+      background: var(--bg);
+      border-radius: 3px;
+      min-width: 260px;
+      align-self: start;
+    }
+    .wm-val {
+      font-family: var(--ff-d);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .wm-label {
+      font-family: var(--ff-m);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
 
-        ul {
-            list-style-type: none;
-        }
+    /* ─── Portfolio Grid ──────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.875rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: var(--border-hi); transform: translateY(-2px); }
+    .card-eyebrow {
+      font-family: var(--ff-m);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--tawny);
+      margin-bottom: 0.7rem;
+    }
+    .card-title {
+      font-family: var(--ff-d);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.55rem;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 0.855rem;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 1.25rem;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .card-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem; }
+    .card-metrics {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+    }
+    .cm-val {
+      font-family: var(--ff-d);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1;
+    }
+    .cm-label {
+      font-family: var(--ff-m);
+      font-size: 0.56rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--ff-d);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--red);
+      letter-spacing: 0.02em;
+      transition: gap 0.15s;
+    }
+    .card-link:hover { gap: 0.65rem; color: var(--red); }
 
-        li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.25rem;
-        }
+    /* ─── Stack Strip ─────────────────────────────────── */
+    .stack-strip {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+    .stack-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.8rem 0.95rem;
+      background: var(--elevated);
+      border-radius: 3px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .stack-dot {
+      flex-shrink: 0;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--red);
+    }
 
-        li::before {
-            content: "•";
-            color: var(--accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
+    /* ─── Contact ─────────────────────────────────────── */
+    .contact-section {
+      padding: 6rem 2.5rem;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-family: var(--ff-d);
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .contact-section h2 em { font-style: normal; color: var(--red); }
+    .contact-section p {
+      color: var(--muted);
+      font-size: 0.975rem;
+      max-width: 420px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .contact-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-        footer {
-            margin-top: 4rem;
-            text-align: center;
-            font-size: 0.875rem;
-            color: #64748b;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 2rem;
-        }
+    /* ─── Footer ──────────────────────────────────────── */
+    footer {
+      padding: 1.75rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--ff-m);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--whisper);
+    }
+    footer a { color: var(--whisper); transition: color 0.18s; }
+    footer a:hover { color: var(--muted); }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.25rem; }
-            .item-header { flex-direction: column; }
-            .date { margin-top: 0.25rem; }
-        }
-    </style>
+    /* ─── Responsive ──────────────────────────────────── */
+    @media (max-width: 840px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links .nav-hide { display: none; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .hero-stats { gap: 1.75rem; }
+      .section { padding: 3.5rem 1.5rem; }
+      .wgu-card { grid-template-columns: 1fr; padding: 2rem; }
+      .wgu-metrics { grid-template-columns: repeat(3, 1fr); min-width: auto; }
+      .contact-section { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.6rem; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Brady Redfearn</h1>
-            <div class="title">Senior Technology Strategist &amp; UX Research Leader</div>
-            <p class="summary">
-                Driving technology strategy, technical leadership, and user-centered systems design. Specializing in bridging the gap between complex technological infrastructure, operational excellence, and user experience research.
-            </p>
-        </header>
+<nav>
+  <div class="nav-logo">BR<em>.</em>PhD</div>
+  <div class="nav-links">
+    <a href="#work" class="nav-hide">Work</a>
+    <a href="https://redfearn.group" target="_blank" class="nav-hide">Advisory</a>
+    <a href="https://linkedin.com/in/redfearnb/" target="_blank" class="nav-hide">LinkedIn</a>
+    <a href="mailto:info@redfearn.group" class="btn-nav">↗ Contact</a>
+  </div>
+</nav>
 
-        <section>
-            <h2>Core Expertise</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Technology Strategy</h3>
-                    <p>Aligning organizational IT initiatives with high-level business objectives and technical roadmaps.</p>
-                </div>
-                <div class="card">
-                    <h3>UX Research</h3>
-                    <p>Utilizing systems engineering methodologies to evaluate, refine, and optimize human-computer interactions.</p>
-                </div>
-                <div class="card">
-                    <h3>Technical Leadership</h3>
-                    <p>Guiding engineering standards, technical direction, and strategy without standard delivery bottlenecks.</p>
-                </div>
-            </div>
-        </section>
+<section class="hero">
+  <div class="hero-log" aria-hidden="true">
+    <div class="hero-log-inner" id="heroLog"></div>
+  </div>
 
-        <section>
-            <h2>Professional Experience</h2>
-            <div class="experience-item">
-                <div class="item-header">
-                    <div>
-                        <span class="company">Western Governors University</span><br>
-                        <strong>Senior Technology Strategist</strong>
-                    </div>
-                    <span class="date">2026 – Present</span>
-                </div>
-                <ul>
-                    <li>Lead long-term strategic technology alignment across institutional domains.</li>
-                    <li>Advise on architectural directions and user-experience considerations for technical systems.</li>
-                </ul>
-            </div>
-        </section>
+  <div class="hero-content">
+    <div class="eyebrow">AI Product Leader · Western Governors University</div>
 
-        <footer>
-            <p>&copy; 2026 Brady Redfearn. All rights reserved.</p>
-        </footer>
+    <h1>Building<br/><em>Intelligent</em><br/>Systems.</h1>
+    <div class="hero-sub">PhD Systems Engineering · LLM Agents · AI Governance</div>
+    <p class="hero-desc">
+      I ship AI-native products at institutional scale and architect the governance frameworks that make them trustworthy. At WGU, I'm embedding LLM agents and agentic workflows into one of the US's largest universities.
+    </p>
+
+    <div class="hero-actions">
+      <a href="mailto:info@redfearn.group" class="btn-primary">↗ Start a Conversation</a>
+      <a href="#work" class="btn-ghost">View Work ↓</a>
     </div>
 
+    <div class="hero-stats">
+      <div>
+        <div class="stat-val">140K+</div>
+        <div class="stat-label">Students · WGU Scale</div>
+      </div>
+      <div>
+        <div class="stat-val">$51B</div>
+        <div class="stat-label">Pipeline Supported</div>
+      </div>
+      <div>
+        <div class="stat-val">16yr</div>
+        <div class="stat-label">AI + SaaS Leadership</div>
+      </div>
+      <div>
+        <div class="stat-val">PhD</div>
+        <div class="stat-label">Systems Engineering</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WGU Feature -->
+<section class="section" id="work" style="padding-top:2.5rem;">
+  <div class="section-label">Current Work</div>
+
+  <div class="wgu-card">
+    <div>
+      <div class="live-badge"><div class="live-dot"></div>Active · 2024–Present</div>
+      <div class="wgu-title">AI Product Studio · Western Governors University</div>
+      <p class="wgu-desc">
+        Leading AI product strategy and hands-on execution for one of the largest accredited universities in the US. Shipping LLM-powered tools, designing multi-agent pipelines for academic operations, and defining the governance model for responsible AI at institutional scale.
+      </p>
+      <div class="tag-row">
+        <span class="tag tag-red">LLM Agent Architecture</span>
+        <span class="tag tag-red">Prompt Engineering</span>
+        <span class="tag tag-red">AI Governance</span>
+        <span class="tag tag-tawny">EdTech at Scale</span>
+        <span class="tag tag-tawny">NIST AI RMF</span>
+        <span class="tag">AI-Native Team Leadership</span>
+        <span class="tag">Product Strategy</span>
+      </div>
+      <a href="./wgu-ai-studio/" class="btn-primary" style="display:inline-flex;">→ View AI Work</a>
+    </div>
+
+    <div class="wgu-metrics">
+      <div>
+        <div class="wm-val" style="color:var(--red)">140K</div>
+        <div class="wm-label">Students at Scale</div>
+      </div>
+      <div>
+        <div class="wm-val">LLM</div>
+        <div class="wm-label">Agents Shipped</div>
+      </div>
+      <div>
+        <div class="wm-val" style="color:var(--tawny)">NIST</div>
+        <div class="wm-label">AI Governance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="section" style="padding-top:1rem;">
+  <div class="section-label">Portfolio</div>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-eyebrow">AI Strategy</div>
+      <div class="card-title">Enterprise AI Maturity Hub</div>
+      <p class="card-desc">Interactive readiness assessment benchmarking an organization's AI posture across data infrastructure, workflow automation, and governance — then generating a prioritized modernization roadmap.</p>
+      <div class="card-chips">
+        <span class="tag tag-red">LLM Strategy</span>
+        <span class="tag tag-red">NIST RMF</span>
+        <span class="tag">Agentic Workflows</span>
+      </div>
+      <div class="card-metrics">
+        <div><div class="cm-val" style="color:var(--red)">3-Stage</div><div class="cm-label">Maturity Model</div></div>
+        <div><div class="cm-val">Ethics</div><div class="cm-label">Governance Layer</div></div>
+      </div>
+      <a href="./ai-strategy-hub/" class="card-link">View Hub →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Leadership</div>
+      <div class="card-title">Leadership Impact Dashboard</div>
+      <p class="card-desc">Quantified outcomes across a $45M portfolio — 3× delivery capacity, a $26M DOE contract win, and 30+ C-suite briefings. Systems thinking applied to executive team performance.</p>
+      <div class="card-chips">
+        <span class="tag tag-tawny">Systems Leadership</span>
+        <span class="tag">Executive Ops</span>
+        <span class="tag">Team Enablement</span>
+      </div>
+      <div class="card-metrics">
+        <div><div class="cm-val" style="color:var(--tawny)">$45M</div><div class="cm-label">Portfolio Scope</div></div>
+        <div><div class="cm-val">3×</div><div class="cm-label">Delivery Capacity</div></div>
+      </div>
+      <a href="./leadership-impact-dashboard/" class="card-link">View Dashboard →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Decision Science</div>
+      <div class="card-title">MCDA Prioritization Framework</div>
+      <p class="card-desc">PhD-grade multi-criteria decision analysis tool built for product roadmaps. Moves resource allocation from political negotiation to mathematical objectivity.</p>
+      <div class="card-chips">
+        <span class="tag tag-red">MCDA</span>
+        <span class="tag">Optimization</span>
+        <span class="tag">Roadmapping</span>
+      </div>
+      <div class="card-metrics">
+        <div><div class="cm-val" style="color:var(--red)">$200K</div><div class="cm-label">Projected Savings</div></div>
+        <div><div class="cm-val">PhD</div><div class="cm-label">Methodology</div></div>
+      </div>
+      <a href="./product-prioritization-framework/" class="card-link">Try Tool →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Case Study</div>
+      <div class="card-title">Cultural Transformation: UX-First Org</div>
+      <p class="card-desc">18-month case study: transformed a waterfall engineering culture into a UX-first organization. +300% maturity, −66% dev rework costs, zero headcount explosion.</p>
+      <div class="card-chips">
+        <span class="tag tag-tawny">Org Design</span>
+        <span class="tag">Systems Thinking</span>
+        <span class="tag">Change Mgmt</span>
+      </div>
+      <div class="card-metrics">
+        <div><div class="cm-val" style="color:var(--green)">+300%</div><div class="cm-label">UX Maturity</div></div>
+        <div><div class="cm-val" style="color:var(--green)">−66%</div><div class="cm-label">Dev Rework</div></div>
+      </div>
+      <a href="./cultural-transformation-case-study/" class="card-link">Read Case Study →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Research Ops</div>
+      <div class="card-title">Insight Operations Suite</div>
+      <p class="card-desc">Statistical rigor applied to product discovery. 95% confidence interval modeling, PII-safe architecture, and real-time usability validation tooling for research-led teams.</p>
+      <div class="card-chips">
+        <span class="tag">ResearchOps</span>
+        <span class="tag">Stat Modeling</span>
+        <span class="tag">PII-Safe</span>
+      </div>
+      <div class="card-metrics">
+        <div><div class="cm-val" style="color:var(--red)">95%</div><div class="cm-label">Confidence Model</div></div>
+        <div><div class="cm-val">PII ✓</div><div class="cm-label">Secured</div></div>
+      </div>
+      <a href="./ux-research-tools/" class="card-link">Access Suite →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Security</div>
+      <div class="card-title">Cyber-Resilience & IIoT Security</div>
+      <p class="card-desc">DHS and INL infrastructure protection. Deep expertise in IoT ransomware threat modeling, NIST 800-53 compliance architecture, and FedRAMP readiness for critical systems.</p>
+      <div class="card-chips">
+        <span class="tag tag-tawny">NIST 800-53</span>
+        <span class="tag tag-tawny">FedRAMP</span>
+        <span class="tag">DHS Advisory</span>
+      </div>
+      <div class="card-metrics">
+        <div><div class="cm-val" style="color:var(--tawny)">NIST</div><div class="cm-label">Compliant</div></div>
+        <div><div class="cm-val">DHS</div><div class="cm-label">Advisory Level</div></div>
+      </div>
+      <a href="./cyber-resilience-hub/" class="card-link">View Work →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Stack -->
+<section class="section stack-strip">
+  <div class="section-label">AI-Native Stack</div>
+  <p style="color:var(--muted);font-size:0.875rem;max-width:480px;font-weight:300;">Tools I use to ship, govern, and scale AI systems — as a practitioner building at institutional scale, not as a hobbyist.</p>
+  <div class="stack-grid">
+    <div class="stack-item"><div class="stack-dot"></div>Claude / Anthropic API</div>
+    <div class="stack-item"><div class="stack-dot"></div>LLM Agent Frameworks</div>
+    <div class="stack-item"><div class="stack-dot"></div>Prompt Engineering</div>
+    <div class="stack-item"><div class="stack-dot"></div>RAG Architecture</div>
+    <div class="stack-item"><div class="stack-dot"></div>NIST AI Risk Mgmt Framework</div>
+    <div class="stack-item"><div class="stack-dot"></div>Agentic Workflow Design</div>
+    <div class="stack-item"><div class="stack-dot"></div>AI Governance Frameworks</div>
+    <div class="stack-item"><div class="stack-dot"></div>GitHub Copilot / AI Devtools</div>
+    <div class="stack-item"><div class="stack-dot"></div>Product-Led Growth (PLG)</div>
+    <div class="stack-item"><div class="stack-dot"></div>MCDA Decision Modeling</div>
+    <div class="stack-item"><div class="stack-dot"></div>Systems Engineering (PhD)</div>
+    <div class="stack-item"><div class="stack-dot"></div>FedRAMP / NIST 800-53</div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+  <h2>Let's build something<br/><em>intelligent.</em></h2>
+  <p>Advisory, consulting, and executive engagements available. If you're building with AI and need a systems architect who can ship — reach out.</p>
+  <div class="contact-actions">
+    <a href="mailto:info@redfearn.group" class="btn-primary">↗ Email Directly</a>
+    <a href="https://linkedin.com/in/redfearnb/" target="_blank" class="btn-ghost">LinkedIn Profile</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Brady Edwin Redfearn, PhD · Spanish Fork, UT</span>
+  <span>REDFEARN GROUP · <a href="https://redfearn.group">redfearn.group</a></span>
+</footer>
+
+<script>
+  const lines = [
+    '> [WGU_AI]      Deploying student success model v3.2 to production...',
+    '> [LLM_AGENT]   Initializing personalized course recommendation pipeline',
+    '> [GOVERNANCE]  NIST AI RMF checkpoint: COMPLIANT ✓',
+    '> [ANALYTICS]   Student outcome improvement delta: +18.4%',
+    '> [AGENT_MESH]  Content personalization workflow: ACTIVE (140K sessions)',
+    '> [SECURITY]    PII anonymization layer: ENGAGED',
+    '> [ROADMAP]     Q2 AI features: 6/8 shipped — 2 ahead of schedule',
+    '> [THROUGHPUT]  Agentic workflow capacity: 340% of manual baseline',
+    '> [LLM_EVAL]    Hallucination rate: 0.4% — within acceptable threshold',
+    '> [PROMPT_ENG]  System prompt v4.2 live — response quality +23%',
+    '> [MCDA]        Resource allocation optimization: complete',
+    '> [STRATEGY]    AI maturity: Stage 2 → Stage 3 transition in progress',
+    '> [TEAM]        Sprint velocity: 3.1× above org baseline',
+    '> [ETHICS]      AI review board approval: CONFIRMED',
+    '> [PIPELINE]    GTM coverage updated: $51B qualified',
+    '> [INFRA]       RAG retrieval latency: 140ms (p95)',
+    '> [NIST]        NIST 800-53 control mapping: 94% coverage',
+    '> [WGU_AI]      Learning agents: 140K+ students served this cycle',
+    '> [LOG]         PhD-level systems engineering applied to LLM operations',
+    '> [STATUS]      All systems nominal. Chaos is the fuel.',
+    '> [AGENT_01]    Awaiting next instruction...',
+    '',
+  ];
+  document.getElementById('heroLog').textContent = [...lines, ...lines].join('\n');
+</script>
 </body>
 </html>
